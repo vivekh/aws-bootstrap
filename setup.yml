@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  CodePipelineS3Bucket:
+    Type: String
+    Description: 'The S3 bucket for CodePipeline artifacts.'
+
+Resources:
+  CodePipelineBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Proprties:
+      BucketName: !Ref CodePipelineBucket
+      PublicAccessBlockConfiguration: 
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
