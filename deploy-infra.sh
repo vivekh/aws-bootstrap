@@ -17,8 +17,6 @@ GH_BRANCH=master
 AWS_ACCOUNT_ID=`aws sts get-caller-identity --profile awsbootstrap --query "Account" --output text`
 CODEPIPELINE_BUCKET="$STACK_NAME-$REGION-codepipeline-$AWS_ACCOUNT_ID"
 
-Echo $CODEPIPELINE_BUCKET
-
 # Deploys static resources
 echo -e "\n\n=========== Deploying setup.yml ==========="
 aws cloudformation deploy \
