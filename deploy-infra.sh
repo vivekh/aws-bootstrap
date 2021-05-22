@@ -1,7 +1,8 @@
+source aws_credentials.sh
 mkdir -p ~/.github
 echo "aws-bootstrap" > ~/.github/aws-bootstrap-repo
-echo "vivekh" > ~/.github/aws-bootstrap-owner
-echo "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" > ~/.github/aws-bootstrap-access-token
+echo "{{username}}" > ~/.github/aws-bootstrap-owner
+echo "{{Github_Token}}" > ~/.github/aws-bootstrap-access-token
 
 STACK_NAME=awsbootstrap
 REGION=ap-south-1
